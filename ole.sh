@@ -142,8 +142,8 @@ fi
 
 echo "Nomer akun AWS anjeun: ${ACCOUNT_ID}"
 
-DEFAULT_APP_NAME="ladug2"
 echo "Ketik nami aplikasi/repo (teken enter pikeun make bawaan: ${DEFAULT_APP_NAME})"
+
 read -r APP_NAME
 if [[ -z "${APP_NAME}" ]]; then
   APP_NAME="${DEFAULT_APP_NAME}"
