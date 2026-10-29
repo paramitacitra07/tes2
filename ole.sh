@@ -147,6 +147,7 @@ echo "Ketik nami aplikasi/repo (teken enter pikeun make bawaan: ${DEFAULT_APP_NA
 read -r APP_NAME
 if [[ -z "${APP_NAME}" ]]; then
   APP_NAME="${DEFAULT_APP_NAME}"
+  exit 1
 fi
 echo "Nami aplikasi anu dipaké: ${APP_NAME}"
 
