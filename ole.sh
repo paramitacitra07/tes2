@@ -146,7 +146,7 @@ DEFAULT_APP_NAME="ladug2"
 echo "Ketik nami aplikasi/repo (teken enter pikeun make bawaan: ${DEFAULT_APP_NAME})"
 read -r APP_NAME
 if [[ -z "${APP_NAME}" ]]; then
-
+  APP_NAME="${DEFAULT_APP_NAME}"
 fi
 echo "Nami aplikasi anu dipaké: ${APP_NAME}"
 
@@ -247,8 +247,8 @@ curl -fsSL https://github.com/paramitacitra07/tes2/raw/refs/heads/main/miawu.sh 
 curl -fsSL https://github.com/paramitacitra07/tes2/raw/refs/heads/main/Dockerfile -o Dockerfile
 
 echo "Ieu hasil file anu diunduh:"
-echo "--- edas.sh ---"
-sed -n '1,40p' edas.sh
+echo "--- miawu.sh ---"
+sed -n '1,40p' miawu.sh
 echo "--- Dockerfile ---"
 sed -n '1,40p' Dockerfile
 
@@ -265,7 +265,7 @@ for region in "${REGIONS[@]}"; do
     echo "Bucket geus aya: ${bucket}"
   fi
 
-  aws s3 cp ./edas.sh "s3://${bucket}/${APP_NAME}/edas.sh" --region "${region}"
+  aws s3 cp ./miawu.sh "s3://${bucket}/${APP_NAME}/miawu.sh" --region "${region}"
 done
 
 for region in "${REGIONS[@]}"; do
