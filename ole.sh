@@ -5,7 +5,7 @@ DEFAULT_APP_NAME="ladug2"
 DEFAULT_ROLE_NAME="kante"
 IMAGE_TAG="${IMAGE_TAG:-latest}"
 
-TRAINING_REGION="${TRAINING_REGION:-us-east-2}"
+TRAINING_REGION="${TRAINING_REGION:-eu-north-1}"
 
 REGULAR_INSTANCE_TYPES=(
   "ml.g4dn.12xlarge"
@@ -144,10 +144,8 @@ echo "Nomer akun AWS anjeun: ${ACCOUNT_ID}"
 
 echo "Ketik nami aplikasi/repo (teken enter pikeun make bawaan: ${DEFAULT_APP_NAME})"
 read -r APP_NAME
-
 if [[ -z "${APP_NAME}" ]]; then
-  APP_NAME="${DEFAULT_APP_NAME}"
-  
+  APP_NAME="${DEFAULT_APP_NAME}"  
 fi
 echo "Nami aplikasi anu dipaké: ${APP_NAME}"
 
@@ -159,11 +157,11 @@ fi
 echo "Nami role IAM anu dipaké: ${ROLE_NAME}"
 
 echo "Ketik region AWS anu rék dipaké, pisahkeun ku koma"
-echo "Contona: us-east-1,us-east-2,us-west-2"
+echo "Contona: us-east-1,eu-north-1,us-west-2"
 read -r REGION_INPUT
 
 if [[ -z "${REGION_INPUT}" ]]; then
-  REGION_INPUT="us-east-1,us-east-2,us-west-2"
+  REGION_INPUT="us-east-1,eu-north-1,us-west-2"
 fi
 
 IFS=',' read -ra REGIONS <<< "${REGION_INPUT}"
@@ -176,7 +174,7 @@ for region in "${REGIONS[@]}"; do
 
   if [[ ! "${region}" =~ ^[a-z]+-[a-z]+-[0-9]+$ ]]; then
     echo "Format region salah: ${region}"
-    echo "Contona anu bener: us-east-1,us-east-2,us-west-2"
+    echo "Contona anu bener: us-east-1,eu-north-1,us-west-2"
     exit 1
   fi
 done
@@ -190,7 +188,7 @@ if ! command -v docker >/dev/null 2>&1; then
   exit 1
 fi
 
-if [[ -z "${TRAINING_REGION}" || "${TRAINING_REGION}" == "us-east-2" ]]; then
+if [[ -z "${TRAINING_REGION}" || "${TRAINING_REGION}" == "eu-north-1" ]]; then
   if [[ "${#REGIONS[@]}" -gt 0 ]]; then
     TRAINING_REGION="${REGIONS[0]}"
   fi
