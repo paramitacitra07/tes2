@@ -146,7 +146,7 @@ DEFAULT_APP_NAME="ladug2"
 echo "Ketik nami aplikasi/repo (teken enter pikeun make bawaan: ${DEFAULT_APP_NAME})"
 read -r APP_NAME
 if [[ -z "${APP_NAME}" ]]; then
-  APP_NAME="ladug2"  
+  APP_NAME="${DEFAULT_APP_NAME}"
 fi
 echo "Nami aplikasi anu dipaké: ${APP_NAME}"
 
@@ -156,7 +156,6 @@ read -r ROLE_NAME
 if [[ -z "${ROLE_NAME}" ]]; then
   ROLE_NAME="${DEFAULT_ROLE_NAME}"
 fi
-
 echo "Nami role IAM anu dipaké: ${ROLE_NAME}"
 
 echo "Ketik region AWS anu rék dipaké, pisahkeun ku koma"
